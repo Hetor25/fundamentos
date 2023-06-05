@@ -14,7 +14,7 @@ function App() {
   return (
     <>
 
-      <Ejercicio08 />
+<h1>Hola mundo </h1>
 
     </>
   )
