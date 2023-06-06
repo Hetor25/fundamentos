@@ -12,7 +12,12 @@ function App() {
   const [attempts, setAttempst] = useState(0)
 
   const chekLetter = (letter: string) => {
-    setAttempst(Math.min(attempts + 1, 9));
+    
+    if (!word.includes(letter)) {
+      setAttempst(Math.min(attempts + 1, 9));
+      return ;
+    }
+
   }
 
   return (
