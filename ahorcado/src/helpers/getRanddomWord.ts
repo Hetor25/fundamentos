@@ -4,7 +4,7 @@ let words: string[] = [
     'PAPAYA',
     'VEHICULO',
     'ROMA',
-    'PRICE SHOES',
+    'IPHONE',
     'GATO',
     'ROCKY'
 ];
