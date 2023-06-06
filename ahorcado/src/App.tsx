@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { letters } from './helpers/letters'
 import { HangImage } from './components/HangImage'
 
@@ -8,11 +8,29 @@ import './App.css'
 function App() {
 
   const [word] = useState('COMPUTADORA');
-  const [hiddenWord, setHiddenWord] = useState('_ '.repeat(word.length))
-  const [attempts, setAttempst] = useState(0)
+  const [hiddenWord, setHiddenWord] = useState('_ '.repeat(word.length));
+  const [attempts, setAttempst] = useState(0);
+  const [lose, setLose] = useState(false);
+  const [won, setWon] = useState(false);
+
+  // Determinar solo si la persona perdio
+  useEffect(() => {
+    if (attempts >= 9) {
+      setLose(true);
+    }
+  }, [attempts]) //hooks
+
+  // Determinar si la persona ganò
+  useEffect(() => {
+    const currrenHiddenWord = hiddenWord.split(' ').join('');
+    if (currrenHiddenWord === word) {
+      setWon(true)
+    }
+  }, [hiddenWord])
+
 
   const chekLetter = (letter: string) => {
-
+    if (lose)  return ;
     if (!word.includes(letter)) {
       setAttempst(Math.min(attempts + 1, 9));
       return;
@@ -26,7 +44,7 @@ function App() {
       }
     }
 
-    setHiddenWord ( hiddenWordArray.join(' ') ); 
+    setHiddenWord(hiddenWordArray.join(' '));
   }
 
   return (
@@ -45,6 +63,19 @@ function App() {
       {/* contador de intetos */}
 
       <h3>Intentos {attempts}</h3>
+
+      {/* Mensaje si perdio */}
+
+      {
+        (lose) ? <h2> Perdiò {word}</h2>
+          : ''
+      }
+
+      {/* mensaje si gano */}
+      {
+        (won) ? <h2> Felicidades, Ganaste </h2>
+          : ''
+      }
 
       {/* Botones */}
 
