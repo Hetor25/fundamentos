@@ -8,16 +8,25 @@ import './App.css'
 function App() {
 
   const [word] = useState('COMPUTADORA');
-  const [hidedenWord] = useState('_ '.repeat(word.length))
+  const [hiddenWord, setHiddenWord] = useState('_ '.repeat(word.length))
   const [attempts, setAttempst] = useState(0)
 
   const chekLetter = (letter: string) => {
-    
+
     if (!word.includes(letter)) {
       setAttempst(Math.min(attempts + 1, 9));
-      return ;
+      return;
     }
 
+    const hiddenWordArray = hiddenWord.split(' ');
+
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] === letter) {
+        hiddenWordArray[i] = letter;
+      }
+    }
+
+    setHiddenWord ( hiddenWordArray.join(' ') ); 
   }
 
   return (
@@ -31,7 +40,7 @@ function App() {
 
       {/* palabra oculata */}
 
-      <h3>{hidedenWord}</h3>
+      <h3>{hiddenWord}</h3>
 
       {/* contador de intetos */}
 
