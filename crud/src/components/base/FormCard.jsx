@@ -5,7 +5,7 @@ import { FormButton } from './FormButton'
 export const FormCard = () => {
   return (
     <div>
-      <FormInput />
+      {/* <FormInput /> */}
       <FormInput />
       <FormButton />
     </div>
