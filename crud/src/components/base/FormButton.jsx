@@ -2,16 +2,18 @@ import React from 'react'
 
 
 
-export const FormButton = () => {
+export const FormButton = ({ texto = "Ingresar", className="px-4 py-1 rounded-full" }) => {
   return (
 
 
     <div>
 
-      <button className="rounded-full bg-sky-800 text-white m-4 p-4 hover:bg-sky-600 drop-shadow-lg mb-4"
+      <button
+
+      className={`${className} bg-sky-800 text-white hover:bg-sky-600 drop-shadow-lg my-2 uppercase`}
 
       >
-        INGRESAR
+        {texto}
       </button>
 
     </div>
