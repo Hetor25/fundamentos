@@ -1,10 +1,11 @@
-import { FormCard } from "./components/base/FormCard"
+// import { FormCard } from "./components/base/FormCard"
+import { TableBase } from "./components/table/TableBase"
 
 function App() {
 
   return (
     <>
-    <FormCard />
+    <TableBase />
     </>
   )
 }
