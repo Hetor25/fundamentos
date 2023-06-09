@@ -8,10 +8,10 @@ export const FormButton = () => {
 
     <div>
 
-      <button className="rounded-full bg-sky-800 text-white m-4 p-4 hover:bg-sky-600 drop-shadow-lg mb-4"
+      <button className="rounded-full bg-sky-800 text-white m-4 p-4 hover:bg-sky-600 drop-shadow-lg mb-4 uppercase"
 
       >
-        INGRESAR
+       ingresar
       </button>
 
     </div>

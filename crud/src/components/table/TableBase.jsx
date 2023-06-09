@@ -1,35 +1,62 @@
 import React from 'react'
 import { catalogoNombres } from '../../helpers/fakeData'
+import { FormButton } from '../base/FormButton'
 
 
 export const TableBase = () => {
   return (
+  
+  
     <div className="container">
-      <table className="w-full">
-        <thead>
-          <tr className="p-5 m-4">
-            <td className='border border-gray-700 px-3 py-3'>Nombre</td>
-            <td className='border border-gray-700 px-3 py-3'>Apellido Paterno</td>
-            <td className='border border-gray-700 px-3 py-3'>Apellido Materno</td>
-            <td className='border border-gray-700 px-3 py-3'>Edad</td>
-            <td className='border border-gray-700 px-3 py-3'>Genero</td>
-            <td className='border border-gray-500 px-3 py-3'>Ingresar</td>
-          </tr>
-        </thead>
-      </table>
 
- 
-      <table>
-        <thead>
+      <div className="flex justify-end" >
+      <FormButton />
+      </div>
+
+
+      <table className="w-full bg-white shadown mt-5 table-auto">
+        <thead className="bg-sky-600 text-white">
           <tr>
-            <td>{}</td>
-            <td>{}</td>
-            <td>{}</td>
-            <td>{}</td>
-            <td>{}</td>
-            <td>{}</td>
+            <td className="p-2">Nombre</td>
+            <td className="p-2">Apellido paterno</td>
+            <td className="p-2">Apellido materno</td>
+            <td className="p-2">Edad</td>
+            <td className="p-2">Genero</td>
+            <td className="p-2">Ingresar</td>
           </tr>
         </thead>
+        <tbody>
+
+
+          {catalogoNombres.map((catalogoNombres) =>
+
+            <tr>
+              <td className="p-3">{catalogoNombres.nombre}</td>
+              <td className="p-3">{catalogoNombres.paterno}</td>
+              <td className="p-3">{catalogoNombres.materno}</td>
+              <td className="p-3">{catalogoNombres.edad}</td>
+              <td className="p-3">{catalogoNombres.genero}</td>
+
+              <button className="bg-red-500 text-white px-3 py-1 font-bold uppercase rounded-full m-2">
+                editar
+              </button>
+              <button className="bg-sky-800 text-white px-3 py-1 font-bold uppercase rounded-full m-2">
+                enviar
+              </button>
+            </tr>
+
+
+          )}
+
+
+
+
+
+        </tbody>
+
+
+
+
       </table>
     </div>
 

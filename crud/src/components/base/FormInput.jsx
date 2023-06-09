@@ -29,6 +29,19 @@ export const FormInput = () => {
 
         </form>
 
+
+
+        <div>
+          <form>
+
+            <label>
+              <input type="text" />
+            </label>
+
+
+          </form>
+        </div>
+
       </div>
 
     </div>
