@@ -4,24 +4,24 @@ const App = () => {
 
 
 
- // const [palabras, setPalabras] = useState(['juan', 'fernando'])
- // const [nombreGif, setNombreGif] = useState('')
- // console.log(e.target.value)
- // const ParaEnviar = (e) => {
- //   setPalabras([...palabras, "hector"])
- //   e.preventDefault()
- //   setNombreGif('hector')
- // }
+  // const [palabras, setPalabras] = useState(['juan', 'fernando'])
+  // const [nombreGif, setNombreGif] = useState('')
+  // console.log(e.target.value)
+  // const ParaEnviar = (e) => {
+  //   setPalabras([...palabras, "hector"])
+  //   e.preventDefault()
+  //   setNombreGif('hector')
+  // }
 
 
   return (
-    <div className="">
+    <div className="mt-36  p-1rem col-span-4  md:px-36  px-2 py-2" >
       <form className="bg-white shadow-md rounded-lg py-10 px-5s mt-5 "
 
       >
 
-        <label className="uppercase">ingresa</label>
-        <input type="Ingresa Nombre" />
+        <label className="uppercase py-4 m-2">ingresa</label>
+        <input className="m-2" type="Ingresa Nombre"  />
 
 
         <button class="rounded-full mt-5 p-3 uppercase font-bold 
@@ -31,16 +31,19 @@ const App = () => {
                 hover:bg-sky-500
                 text-white
                 shadow-lg"
+                type='submit'
         >Ingresar</button>
 
-
- </form>
-
+      </form>
 
 
 
 
-     
+
+
+
+
+
 
 
 
